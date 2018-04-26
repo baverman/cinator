@@ -1,0 +1,18 @@
+{% macro menu_item(item) %}
+    <span class="Mend(2rem) Va(m)">{{ item }}</span>
+{% endmacro %}
+
+{% macro menu() %}
+<div class="menu Bgc(#eee) C(#444) Lh(4rem) Px(1.5rem)">
+    {{ caller() }}
+</div>
+{% endmacro %}
+
+{% macro logo() %}
+<span class="Fz(2rem) menu_Mend(3rem) menu_Va(m)"><!--
+    --><span class="C(#884ea0)">[</span><!--
+    --><span class="C(#cb4335)">ci</span><!--
+    --><span class="C(#884ea0)">]</span><!--
+    --><span class="C(#17a589)">nator</span><!--
+--></span>
+{% endmacro %}

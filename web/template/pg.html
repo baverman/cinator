@@ -1,0 +1,27 @@
+{% import 'widget.html' as widget %}
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset='utf-8'>
+    <title>Playground</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/atomic.css">
+    <script src="js/main.min.js"></script>
+</head>
+<body class="P(3rem)">
+    <h1 class="Fw(b) Fz(30px)">Playground</h1>
+    <div class="Mt(3rem)">
+        {% call widget.menu() %}
+            {{ widget.logo() }}
+            {{ widget.menu_item('Status') }}
+            {{ widget.menu_item('Help') }}
+        {% endcall %}
+    </div>
+
+    <div data-controller="hello">
+        <input type="text" data-target="hello.name" />
+        <button data-action="hello#hello">Fire!</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "cinator-ui",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Web UI for [ci]nator",
+  "dependencies": {
+    "atomizer": "^3.4.7",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "browserify": "^16.2.0",
+    "stimulus": "^1.0.1",
+    "uglify-js": "^3.3.22"
+  }
+}
