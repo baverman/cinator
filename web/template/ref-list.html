@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% for ref in api.get_refs() %}
+        {{ref.name}} {{ref.commit_id}}<br>
+    {% endfor %}
+{% endblock %}

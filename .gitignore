@@ -1,2 +1,4 @@
 /repo
+/settings/local.py
 *.pyc
+/test.py

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset='utf-8'>
+    <title>Cinator - {{ title | default('Index') }}</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/atomic.css">
+    <script src="/static/js/main.js"></script>
+</head>
+<body class="P(3rem)">
+    {% block content %}{% endblock %}
+</body>
+</html>

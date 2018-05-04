@@ -1,5 +1,5 @@
 .SUFFIXES:
-.PHONY: all clean
+.PHONY: all clean list-deps
 
 MAKEFLAGS += -r
 VPATH := template css src
@@ -13,6 +13,8 @@ js.src += $(wildcard src/*/*.js)
 js.dest := $(patsubst src/%, $(dest)/js/%, $(js.src))
 
 all: $(dest)/pg.html $(dest)/css/atomic.css $(dest)/js/main.min.js $(css.dest)
+
+dev: $(dest)/pg.html $(dest)/css/atomic.css $(dest)/js/main.js $(css.dest)
 
 clean:
 	rm -rf $(dest)
@@ -34,7 +36,10 @@ $(dest)/js/%.js: %.js | $(dest)/js $(dest)/js/controllers
 	./node_modules/.bin/babel --source-maps inline -o $@ $<
 
 $(dest)/js/main.js: $(js.dest)
-	./node_modules/.bin/browserify $(dest)/js/app.js -o $@ --debug
+	./node_modules/.bin/browserify $(dest)/js/app.js -o $@ --debug --noparse=stimulus
+
+list-deps: $(js.dest)
+	./node_modules/.bin/browserify $(dest)/js/app.js --list
 
 $(dest)/js/main.min.js: $(dest)/js/main.js
 	./node_modules/.bin/uglifyjs $< -c -m --source-map includeSources,content=inline,url=main.min.js.map -o $@
